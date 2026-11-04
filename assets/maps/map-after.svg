@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="4200" height="2800" viewBox="0 0 4200 2800">
+<defs>
+  <linearGradient id="sea" x1="0" y1="0" x2=".85" y2="1"><stop stop-color="#173039"/><stop offset=".48" stop-color="#10262d"/><stop offset="1" stop-color="#091a20"/></linearGradient>
+  <linearGradient id="land" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#d7cba6"/><stop offset=".34" stop-color="#c7b88f"/><stop offset=".72" stop-color="#b9a57b"/><stop offset="1" stop-color="#a38e67"/></linearGradient>
+  <linearGradient id="ice" x1=".1" y1="0" x2=".8" y2="1"><stop stop-color="#f2f0e4"/><stop offset=".5" stop-color="#d3ded5"/><stop offset="1" stop-color="#a5b8b1"/></linearGradient>
+  <pattern id="seaContours" width="210" height="150" patternUnits="userSpaceOnUse"><path d="M-40 35q60-23 120 0t120 0M-65 70q75-26 150 0t150 0M-20 112q55-20 110 0t110 0" fill="none" stroke="#88a7a6" stroke-opacity=".12" stroke-width="2"/></pattern>
+  <pattern id="landContours" width="250" height="205" patternUnits="userSpaceOnUse"><path d="M-25 90Q20 22 77 81t109-3q43-54 91-32M-15 113Q30 45 87 104t109-3q43-54 91-32M-5 136Q40 68 97 127t109-3q43-54 91-32M5 159Q50 91 107 150t109-3q43-54 91-32" fill="none" stroke="#665d49" stroke-opacity=".27" stroke-width="1.5"/><path d="M38 42q34-36 68 0t68 0M50 55q22-23 44 0t44 0" fill="none" stroke="#fbf0d4" stroke-opacity=".28" stroke-width="1.5"/></pattern>
+  <pattern id="forestPattern" width="52" height="52" patternUnits="userSpaceOnUse"><path d="m25 5-17 29h10l-8 14h31l-9-14h10z" fill="#354d3b" stroke="#7f7958" stroke-width="1.5"/><path d="M25 17v29" stroke="#d1c69e" stroke-opacity=".64"/></pattern>
+  <pattern id="marshPattern" width="40" height="38" patternUnits="userSpaceOnUse"><path d="M4 32Q13 14 22 32m2 0q7-17 14 0" fill="none" stroke="#6f7658" stroke-opacity=".56" stroke-width="1.5"/><circle cx="11" cy="17" r="2" fill="#9b7350" opacity=".52"/></pattern>
+  <pattern id="desertPattern" width="40" height="34" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="1.5" fill="#725d3e" opacity=".38"/><circle cx="29" cy="20" r="1.2" fill="#fff0ca" opacity=".52"/><path d="M-4 29q17-8 36 0" fill="none" stroke="#947c52" stroke-opacity=".36"/></pattern>
+  <pattern id="saltPattern" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18" stroke="#d9d0b2" stroke-opacity=".38" stroke-width="1"/></pattern>
+  <filter id="coastShadow" x="-15%" y="-15%" width="130%" height="130%"><feGaussianBlur stdDeviation="21"/></filter>
+  <path id="continent" d="M445 535Q488 430 616 395L742 320 901 346 1025 278 1177 324 1320 280 1465 329 1605 288 1753 340 1896 300 2045 359 2200 323 2346 370 2510 346 2658 397 2814 374 2952 444 3110 465 3255 560 3402 606 3530 720 3507 854 3592 960 3530 1086 3600 1226 3522 1348 3591 1488 3484 1599 3456 1740 3320 1815 3260 1980 3110 2055 3025 2220 2860 2275 2706 2412 2526 2371 2354 2500 2165 2428 1980 2520 1800 2445 1640 2514 1452 2388 1277 2370 1157 2213 997 2162 898 1994 754 1910 788 1742 652 1624 690 1466 558 1330 618 1162 505 1032 572 876 470 730z"/>
+  <clipPath id="continentClip"><use href="#continent"/></clipPath>
+  <g id="mountain" fill="#70644d" stroke="#eadbb8" stroke-width="2.4"><path d="m0 73 43-69 42 71-21-15-19 23-19-23z"/><path d="m65 82 42-62 42 66-22-16-19 21-18-23z"/><path d="m126 74 38-55 41 60-22-14-18 19-18-21z"/><path d="M36 91 83 32l55 64" fill="none" stroke="#605740" stroke-width="1.5"/></g>
+  <g id="pine" fill="#324b3b" stroke="#c5ba92" stroke-width="1.6"><path d="m0 34 18-30 18 30h-10l11 15H-1l10-15z"/><path d="m31 37 16-26 18 26h-10l10 14H29l10-14z"/></g>
+  <g id="ruin" fill="none" stroke="#715b4c" stroke-width="3"><path d="M1 33V9l10-7 10 7v24M26 33V9l10-7 10 7v24M-2 33h51M6 14h8m-8 7h8m-8 7h8m10-14h8m-8 7h8m-8 7h8"/></g>
+</defs>
+
+<!-- Открытое море, батиметрия и географическая сетка -->
+<rect width="4200" height="2800" fill="url(#sea)"/><rect width="4200" height="2800" fill="url(#seaContours)"/>
+<g fill="none" stroke="#b4a474" stroke-opacity=".16" stroke-width="1.5">
+ <path d="M150 200H4050M150 600H4050M150 1000H4050M150 1400H4050M150 1800H4050M150 2200H4050M150 2600H4050"/>
+ <path d="M400 130V2670M900 130V2670M1400 130V2670M1900 130V2670M2400 130V2670M2900 130V2670M3400 130V2670M3900 130V2670"/>
+</g>
+<g fill="none" stroke="#9bb4b1" stroke-opacity=".18" stroke-width="2"><path d="M38 320Q230 246 430 306t390-4M45 350Q250 275 450 335t384-3M3600 370Q3830 300 4160 362M3612 402Q3850 332 4180 394M52 2130q200-72 398-12t390-4M3450 2200q300-80 690-5M3465 2233q310-80 704-5"/><path d="M88 868q153-70 320-10m-306 39q158-73 326-12M3610 1040q180-70 364-3m-380 34q190-70 377-4M1440 105q175-57 350-2m-338 29q184-56 357-2"/></g>
+<g fill="#d6cba9" opacity=".7" font-family="Georgia,serif" font-size="22" letter-spacing="5"><text x="1560" y="142">СЕВЕРНОЕ МОРЕ</text><text x="72" y="1330" transform="rotate(-90 72 1330)">ЗАПАДНЫЙ ПРОЛИВ</text><text x="1730" y="2694">ЮЖНЫЙ ОКЕАН</text><text x="4052" y="1350" transform="rotate(90 4052 1350)">ВОСТОЧНОЕ МОРЕ</text></g>
+
+<!-- Эралон: единый материк с северным ледяным щитом, центральной низиной и южными плато -->
+<use href="#continent" fill="#061419" opacity=".7" filter="url(#coastShadow)" transform="translate(0 21)"/>
+<use href="#continent" fill="url(#land)" stroke="#e8d5a7" stroke-width="9"/>
+<use href="#continent" fill="url(#landContours)" opacity=".85"/>
+<g clip-path="url(#continentClip)">
+ <path d="M520 930Q730 760 1040 835T1360 1000L1435 1330 1250 1690 947 1770 714 1610 556 1380z" fill="#516149" opacity=".56"/>
+ <path d="M520 930Q730 760 1040 835T1360 1000L1435 1330 1250 1690 947 1770 714 1610 556 1380z" fill="url(#forestPattern)" opacity=".7"/>
+ <path d="M1240 1670Q1550 1470 1890 1605L2160 1640 2460 1530 2790 1650 3005 1850 2860 2110 2560 2340 2290 2310 2070 2450 1835 2380 1630 2470 1450 2320 1250 2290 1100 2120z" fill="#9b8056" opacity=".5"/>
+ <path d="M1240 1670Q1550 1470 1890 1605L2160 1640 2460 1530 2790 1650 3005 1850 2860 2110 2560 2340 2290 2310 2070 2450 1835 2380 1630 2470 1450 2320 1250 2290 1100 2120z" fill="url(#desertPattern)" opacity=".78"/>
+ <path d="M725 440 864 346 1000 360 1124 322 1260 360 1418 315 1585 352 1746 326 1908 367 2040 340 2145 411 2070 542 1920 575 1794 648 1648 606 1514 681 1370 635 1240 682 1110 609 980 634 865 555z" fill="url(#ice)" stroke="#eef0de" stroke-width="5"/>
+ <path d="m840 503 140-132 115-10-82 87 132-47-101 105-98 5-66 66zM1244 498l172-145 126 8-111 75-36 93-112 25zM1644 506l158-137 166 12-117 61-77 92-111-7zM1942 492l121-104 92 22-84 46-51 70-70-13z" fill="#a6b8b1" opacity=".7"/>
+ <path d="M1730 1000Q1980 844 2245 939T2504 1222Q2335 1410 2085 1364T1730 1000" fill="#b4a27c" opacity=".32"/>
+ <path d="M1730 1000Q1980 844 2245 939T2504 1222Q2335 1410 2085 1364T1730 1000" fill="url(#marshPattern)" opacity=".56"/>
+ <path d="M2980 745q155-110 302-10t110 275q-167 76-302-16t-110-249M2940 1380q170-95 320 18t74 254q-163 83-298-20t-96-252" fill="url(#forestPattern)" opacity=".68"/>
+ <path d="M540 1900q150-110 288 0t72 236q-153 70-276-22t-84-214M2980 2170q150-112 290-8t81 229q-160 69-286-22t-85-199" fill="url(#saltPattern)" opacity=".45"/>
+</g>
+
+<!-- Внешние архипелаги, островные дуги и мелководья -->
+<g fill="url(#land)" stroke="#e1cea2" stroke-width="5">
+ <path d="M3635 980q78-50 150 5l-20 80q-91 29-144-19zM3775 1120q66-40 119 11l-18 68q-72 23-117-17zM3590 1270q55-34 101 8l-17 57q-61 19-94-14zM3800 1425q81-48 145 13l-27 72q-82 24-130-18zM3590 1585q71-45 127 8l-23 71q-75 20-116-17zM3730 1740q61-39 110 9l-19 62q-64 18-101-16z"/>
+ <path d="M658 2322q87-56 162 4l-31 74q-92 26-145-20zM860 2430q67-43 121 10l-20 62q-72 19-111-18zM1050 2355q55-34 101 8l-17 57q-60 17-94-14zM3290 2230q79-49 141 12l-24 68q-81 23-126-17zM3490 2130q60-37 108 9l-18 59q-62 18-98-15z"/>
+ <path d="M493 690q57-34 109 12l-19 54q-65 17-99-16zM530 802q48-30 88 8l-18 45q-53 14-81-13z"/>
+</g>
+<g fill="none" stroke="#91aaa4" stroke-opacity=".58" stroke-width="2.5"><path d="M3580 1016q164-67 288 20m-311 220q145-62 257 13m-251 373q151-64 275 15M630 2355q135-65 243 20m-93 65q111-49 201 12"/></g>
+
+<!-- Горные системы: Ветх-Орн, Зар-Каш, Медная дуга и восточная гряда -->
+<g opacity=".98">
+ <use href="#mountain" x="820" y="675"/><use href="#mountain" x="965" y="695"/><use href="#mountain" x="1110" y="670"/><use href="#mountain" x="1255" y="706"/><use href="#mountain" x="1400" y="675"/><use href="#mountain" x="1545" y="701"/><use href="#mountain" x="1690" y="672"/><use href="#mountain" x="1835" y="704"/><use href="#mountain" x="1980" y="675"/><use href="#mountain" x="2125" y="710"/>
+ <use href="#mountain" x="2100" y="830"/><use href="#mountain" x="2238" y="886"/><use href="#mountain" x="2310" y="992"/><use href="#mountain" x="2350" y="1100"/><use href="#mountain" x="2310" y="1210"/><use href="#mountain" x="2250" y="1320"/><use href="#mountain" x="2170" y="1420"/>
+ <use href="#mountain" x="1280" y="1500"/><use href="#mountain" x="1425" y="1545"/><use href="#mountain" x="1570" y="1570"/><use href="#mountain" x="1715" y="1560"/><use href="#mountain" x="1860" y="1540"/><use href="#mountain" x="2005" y="1505"/><use href="#mountain" x="2150" y="1470"/><use href="#mountain" x="2295" y="1450"/>
+ <use href="#mountain" x="2740" y="755"/><use href="#mountain" x="2875" y="812"/><use href="#mountain" x="2990" y="900"/><use href="#mountain" x="3050" y="1010"/><use href="#mountain" x="3075" y="1120"/><use href="#mountain" x="3015" y="1230"/><use href="#mountain" x="2930" y="1330"/><use href="#mountain" x="2820" y="1415"/>
+</g>
+<g fill="none" stroke="#615943" stroke-width="2.2" stroke-opacity=".63"><path d="M796 772q420-67 816-18t587 42M2092 820q211 100 250 318t-99 340M1250 1586q384 125 770 60t627-27M2728 740q208 134 296 347t15 416"/></g>
+
+<!-- Леса и рощи Теневых Чащ -->
+<g opacity=".96">
+ <use href="#pine" x="590" y="966"/><use href="#pine" x="658" y="1015"/><use href="#pine" x="726" y="952"/><use href="#pine" x="794" y="1044"/><use href="#pine" x="862" y="990"/><use href="#pine" x="930" y="1060"/><use href="#pine" x="998" y="1004"/><use href="#pine" x="1066" y="1075"/><use href="#pine" x="1134" y="1015"/><use href="#pine" x="1202" y="1090"/><use href="#pine" x="1270" y="1033"/>
+ <use href="#pine" x="560" y="1120"/><use href="#pine" x="632" y="1170"/><use href="#pine" x="706" y="1108"/><use href="#pine" x="780" y="1200"/><use href="#pine" x="854" y="1145"/><use href="#pine" x="928" y="1222"/><use href="#pine" x="1002" y="1160"/><use href="#pine" x="1076" y="1240"/><use href="#pine" x="1150" y="1180"/><use href="#pine" x="1224" y="1260"/><use href="#pine" x="1295" y="1195"/>
+ <use href="#pine" x="625" y="1320"/><use href="#pine" x="700" y="1370"/><use href="#pine" x="775" y="1308"/><use href="#pine" x="850" y="1395"/><use href="#pine" x="925" y="1335"/><use href="#pine" x="1000" y="1415"/><use href="#pine" x="1075" y="1352"/><use href="#pine" x="1150" y="1430"/><use href="#pine" x="1225" y="1370"/>
+ <use href="#pine" x="2820" y="950"/><use href="#pine" x="2890" y="1005"/><use href="#pine" x="2960" y="950"/><use href="#pine" x="3030" y="1030"/><use href="#pine" x="3100" y="972"/><use href="#pine" x="2850" y="1450"/><use href="#pine" x="2920" y="1500"/><use href="#pine" x="2990" y="1440"/><use href="#pine" x="3060" y="1520"/>
+</g>
+
+<!-- После разлома единый пролив связывает Эри-Зар с восточным морем и южным фарватером. -->
+<path d="M4200 820 3500 820Q3452 864 3478 964L3524 1095Q3472 1200 3498 1322L3560 1495 4200 1530 4200 1850 3450 1850Q3334 1808 3210 1690Q3100 1592 3004 1580Q2876 1544 2770 1585Q2650 1623 2538 1530Q2420 1444 2310 1540Q2204 1620 2090 1540Q1983 1476 1882 1530Q1780 1564 1710 1471Q1654 1401 1694 1300Q1735 1207 1680 1124Q1690 1010 1790 963Q1908 906 2022 973Q2128 1041 2240 1000Q2378 942 2503 1002Q2630 1060 2743 1024Q2880 973 3005 1019Q3144 1075 3270 1023Q3400 972 3524 1095L3500 1000Q3458 896 3500 820Z" fill="#143e48" stroke="#ead8ad" stroke-width="10"/>
+<path d="M4200 852 3520 852Q3490 891 3502 964L3550 1090Q3510 1197 3535 1312L3590 1475 4200 1500 4200 1815 3465 1815Q3350 1766 3238 1660Q3120 1568 3010 1553Q2880 1518 2780 1557Q2660 1590 2555 1504Q2423 1418 2300 1515Q2200 1586 2100 1515Q1980 1450 1890 1500Q1790 1532 1735 1458Q1685 1392 1725 1302Q1760 1208 1710 1125Q1717 1037 1804 993Q1913 940 2015 1000Q2130 1075 2250 1030Q2380 979 2495 1035Q2635 1090 2750 1055Q2880 1008 3005 1050Q3150 1102 3280 1056Q3400 1010 3550 1090L3520 980Q3490 892 3520 852Z" fill="#2b6470" opacity=".76"/>
+<g fill="none" stroke="#bad4c9" stroke-opacity=".48" stroke-width="4"><path d="M1740 1110Q1870 1058 2008 1116T2260 1100 2500 1094 2740 1136 2990 1118 3230 1154 3505 1150"/><path d="M1728 1200Q1865 1152 2010 1208T2267 1194 2510 1184 2752 1225 3000 1205 3240 1242 3520 1238"/><path d="M1715 1290Q1860 1244 2018 1300T2272 1284 2520 1275 2762 1315 3010 1298 3260 1336 3540 1326"/><path d="M1765 1380Q1900 1340 2050 1393T2310 1375 2550 1370 2790 1415 3032 1396 3290 1440 3575 1412"/><path d="M1930 986Q1980 1065 1950 1150M2350 985Q2410 1068 2380 1160M2790 1020Q2840 1100 2815 1190M3215 1040Q3270 1128 3235 1218"/></g>
+<g fill="#d9e4d8" stroke="#f4e8c9" stroke-width="5"><path d="M1950 1014q66-41 121 12l-20 53q-74 18-113-18zM2318 1380q67-41 124 12l-22 58q-72 19-116-18zM2690 1425q60-37 111 10l-18 50q-66 17-102-16zM3060 1147q54-32 99 9l-17 45q-59 15-92-14zM2900 1515q49-30 90 8l-15 40q-54 14-82-13z"/></g>
+<!-- Южный рукав внутреннего моря следует руслу Соляного потока к океанскому проливу. -->
+<path d="M1708 1436Q1765 1501 1810 1560Q1757 1640 1792 1724Q1820 1810 1904 1884Q1980 1962 2010 2083Q2040 2240 2140 2390Q2250 2325 2262 2194Q2266 2070 2195 1962Q2133 1855 2150 1760Q2155 1652 2250 1560Q2192 1586 2145 1623Q2035 1578 1934 1510Q1810 1564 1708 1436Z" fill="#174750" stroke="#d9c89f" stroke-width="8"/>
+<path d="M1750 1470Q1803 1530 1846 1575Q1805 1645 1832 1723Q1865 1805 1940 1874Q2010 1955 2043 2080Q2070 2220 2143 2325Q2215 2270 2218 2176Q2220 2073 2154 1970Q2095 1860 2115 1757Q2125 1665 2196 1585" fill="none" stroke="#a8cfc4" stroke-opacity=".5" stroke-width="5"/>
+<!-- Подписи морей, земель, хребтов и речных долин -->
+<g fill="#403e31" font-family="Georgia,serif" font-style="italic" text-anchor="middle">
+ <text x="990" y="1265" font-size="39" letter-spacing="7" fill="#e9dfc4" opacity=".88">ТЕНЕВЫЕ ЧАЩИ</text>
+ <text x="2040" y="1165" font-size="39" letter-spacing="7" fill="#d9e4d8">ВНУТРЕННЕЕ МОРЕ ЭРИ-ЗАР</text>
+ <text x="3040" y="1125" font-size="34" letter-spacing="5">МАРКИЗАТ САР-МОРА</text>
+ <text x="2030" y="1950" font-size="34" letter-spacing="5">ЮЖНЫЕ ПЛАТО</text>
+ <text x="1560" y="465" font-size="32" letter-spacing="6" fill="#465c58">ЛЕДЯНОЙ ЩИТ ВЕТХ-ОРН</text>
+ <text x="2250" y="782" font-size="25" letter-spacing="5">ХРЕБЕТ ЗАР-КАШ</text>
+ <text x="1770" y="1500" font-size="23" letter-spacing="4">МЕДНАЯ ДУГА</text>
+ <text x="1040" y="1680" font-size="22" letter-spacing="4">ЗЕЛЁНЫЙ ПОЯС</text>
+ <text x="3010" y="680" font-size="22" letter-spacing="4">ВОСТОЧНАЯ ГРЯДА</text>
+ <text x="870" y="2150" font-size="20" letter-spacing="3">СОЛЯНОЙ БЕРЕГ</text>
+</g>
+<g fill="#344d54" font-family="Georgia,serif" font-style="italic" font-size="20" letter-spacing="3"><text x="1510" y="890" transform="rotate(68 1510 890)">РЕКА СЕМИ ИСТОКОВ</text><text x="1905" y="960" transform="rotate(108 1905 960)">ЧЁРНАЯ ВОДА</text><text x="1050" y="1180" transform="rotate(17 1050 1180)">ВЕЛЬСКАЯ РЕКА</text><text x="2480" y="1610" transform="rotate(65 2480 1610)">СОЛЯНОЙ ПОТОК</text></g>
+
+<!-- Печатная рамка, герб картографов, роза ветров и линейный масштаб -->
+<g fill="none" stroke="#d8c392"><rect x="17" y="17" width="4166" height="2766" rx="6" stroke-width="5"/><rect x="39" y="39" width="4122" height="2722" rx="3" stroke-opacity=".42" stroke-width="2"/></g>
+<g transform="translate(3940 205)" fill="none" stroke="#e2cb94" stroke-width="5"><circle r="79"/><circle r="62" stroke-opacity=".52"/><path d="M0-70 19 0 0 70-19 0zM-70 0 0-19 70 0 0 19z" fill="#a58a58"/><circle r="9" fill="#e2cb94"/><text x="-12" y="-98" fill="#eadbb9" stroke="none" font-family="Georgia" font-size="22">N</text><text x="-11" y="120" fill="#eadbb9" stroke="none" font-family="Georgia" font-size="18">S</text></g>
+<g transform="translate(105 2630)" font-family="Georgia,serif"><path d="M0 0h360M0 14h360" stroke="#574d39" stroke-width="3"/><path d="M0 0h180v14H0z" fill="#6f6044"/><text x="0" y="-17" fill="#4b4332" font-size="20">0</text><text x="165" y="-17" fill="#4b4332" font-size="20">100 лиг</text><text x="0" y="58" fill="#4b4332" font-size="20" letter-spacing="4">КАРТОГРАФИЧЕСКАЯ КОЛЛЕГИЯ ЭРАЛОНА · ЛИСТ IV</text></g>
+<text x="2960" y="2700" fill="#4b4332" font-family="Georgia,serif" font-size="21" letter-spacing="4">ПОСЛЕ ДНЯ ШАЛ-КАРИ · 50–500 ГГ.</text>
+</svg>
+
+

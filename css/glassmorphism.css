@@ -1,0 +1,5 @@
+.epoch-card, .map-notice, .search-box, .toolbar-button { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+::selection { color: #f5ecd9; background: rgba(173, 137, 76, .52); }
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { border-radius: 5px; background: rgba(199, 166, 107, .27); }

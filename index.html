@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1114" />
+    <meta name="description" content="Хроники Шал-Кари — исторический интерактивный атлас Эралона." />
+    <title>Хроники Шал-Кари · Атлас Эралона</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/glassmorphism.css" />
+    <link rel="stylesheet" href="css/map-overlay.css" />
+  </head>
+  <body>
+    <main class="atlas" id="atlas">
+      <aside class="atlas-sidebar" aria-label="Управление атласом">
+        <header class="brand">
+          <span class="brand-seal" aria-hidden="true">✧</span>
+          <div class="brand-copy">
+            <p class="eyebrow">Картографическая коллегия</p>
+            <h1>Хроники <em>Шал-Кари</em></h1>
+            <p class="brand-subtitle">Исторический атлас Эралона</p>
+          </div>
+        </header>
+
+        <section class="epoch-card" aria-live="polite">
+          <div class="epoch-topline"><span class="live-dot"></span><span>Эпоха</span><span class="epoch-index" id="epoch-index">01 / 03</span></div>
+          <h2 id="epoch-title">Эпоха Осколочного Льда</h2>
+          <p class="epoch-date" id="year-display">250 год до н.э.</p>
+          <div class="epoch-progress"><span id="epoch-progress"></span></div>
+        </section>
+
+        <section class="timeline-block" aria-labelledby="timeline-heading">
+          <div class="section-heading"><div><p class="eyebrow">Путешествие во времени</p><h2 id="timeline-heading">Летопись мира</h2></div><span class="timeline-current" id="timeline-year">−250</span></div>
+          <div class="slider-shell"><input id="time-slider" type="range" min="-500" max="500" step="1" value="-250" aria-label="Год на карте" /><span class="cataclysm-tick" title="День Шал-Кари · год 0"></span></div>
+          <div class="slider-scale"><span>500 до н.э.</span><span class="cataclysm-caption">Шал-Кари · 0</span><span>500 н.э.</span></div>
+          <div id="milestone-list" class="milestone-list" aria-label="Ключевые даты"></div>
+        </section>
+
+        <section class="chronicle" aria-labelledby="chronicle-heading">
+          <div class="section-heading compact"><div><p class="eyebrow">Летописец</p><h2 id="chronicle-heading">Летопись этого года</h2></div><span class="folio-mark">✦</span></div>
+          <h3 id="chronicle-title" class="chronicle-title">Годовая запись</h3>
+          <div class="chronicle-stats" aria-live="polite"><span id="water-state">Вода: 0%</span><span id="settlement-state">Поселения: 0</span><span id="conflict-state">Мирный год</span></div>
+          <div id="global-log" class="chronicle-text"></div>
+          <p class="chronicle-source" id="chronicle-source">Из свитков Великой библиотеки · годовые записи восстанавливаются по картам, договорам и показаниям очевидцев.</p>
+        </section>
+
+        <section class="layer-panel" aria-labelledby="layer-heading">
+          <div class="section-heading compact"><div><p class="eyebrow">Картографические данные</p><h2 id="layer-heading">Слои и условные знаки</h2></div><button id="layers-toggle" class="icon-button" type="button" aria-label="Свернуть слои" aria-expanded="true">⌃</button></div>
+          <div id="layer-list" class="layer-list">
+            <p class="layer-group-title">Населённые пункты</p>
+            <label class="layer-row"><input type="checkbox" data-marker-filter="city" checked /><span class="legend-mark mark-city">◆</span><span>Города и столицы</span><small data-count-for="city">00</small></label>
+            <label class="layer-row"><input type="checkbox" data-marker-filter="citadel" checked /><span class="legend-mark mark-citadel">⬟</span><span>Цитадели</span><small data-count-for="citadel">00</small></label>
+            <label class="layer-row"><input type="checkbox" data-marker-filter="settlement" checked /><span class="legend-mark mark-settlement">●</span><span>Поселения</span><small data-count-for="settlement">00</small></label>
+            <label class="layer-row"><input type="checkbox" data-marker-filter="port" checked /><span class="legend-mark mark-port">⌁</span><span>Порты</span><small data-count-for="port">00</small></label>
+            <label class="layer-row"><input type="checkbox" data-marker-filter="ruin" checked /><span class="legend-mark mark-ruin">◇</span><span>Руины</span><small data-count-for="ruin">00</small></label>
+            <label class="layer-row"><input type="checkbox" data-marker-filter="anomaly" checked /><span class="legend-mark mark-anomaly">✧</span><span>Аномалии</span><small data-count-for="anomaly">00</small></label>
+            <p class="layer-group-title geographic-title">География</p>
+            <label class="layer-row"><input type="checkbox" data-feature-filter="rivers" checked /><span class="legend-line river-key"></span><span>Реки и водоёмы</span></label>
+            <label class="layer-row"><input type="checkbox" data-feature-filter="landRoutes" checked /><span class="legend-line road-key"></span><span>Сухопутные тракты</span></label>
+            <label class="layer-row"><input type="checkbox" data-feature-filter="seaRoutes" checked /><span class="legend-line sea-key"></span><span>Морские пути</span></label>
+            <label class="layer-row"><input type="checkbox" data-feature-filter="borders" checked /><span class="legend-line border-key"></span><span>Границы держав</span></label>
+            <label class="layer-row"><input type="checkbox" data-feature-filter="floodZones" checked /><span class="legend-line flood-key"></span><span>Постепенное затопление</span></label>
+            <label class="layer-row"><input type="checkbox" data-feature-filter="burnScars" checked /><span class="legend-line burn-key"></span><span>Следы пожаров</span></label>
+          </div>
+        </section>
+
+        <footer class="sidebar-footer"><span>ЭРАЛОН · КООРДИНАТНАЯ СЕТЬ</span><span>ЛИСТ <b>IV</b></span></footer>
+      </aside>
+
+      <section class="map-workspace" aria-label="Карта Эралона">
+        <div id="map" role="application" aria-label="Панорамируемая карта мира"></div>
+        <header class="map-toolbar">
+          <div class="map-title"><span class="map-title-icon">⌖</span><div><p class="eyebrow">ЗАПАДНЫЙ КОНТИНЕНТ</p><h2>Земли Эралона</h2></div></div>
+          <div class="map-tools">
+            <label class="search-box"><span aria-hidden="true">⌕</span><input id="location-search" type="search" list="location-suggestions" placeholder="Название места или региона" autocomplete="off" /><datalist id="location-suggestions"></datalist><kbd>↵</kbd></label>
+            <span class="map-separator"></span>
+            <button id="btn-reset" class="toolbar-button" type="button"><span aria-hidden="true">⤢</span> Вся карта</button>
+          </div>
+        </header>
+        <div id="map-notice" class="map-notice" hidden></div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
